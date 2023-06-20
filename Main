@@ -1,0 +1,63 @@
+import java.util.Scanner;
+
+public class VL05Folie103 {
+
+	// Die Formatierung der Tabelle soll genauso aussehen wie die von der Vorlesungsfolie 103
+	
+	public static void main(String[] args) {
+		
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Gib die Obergrenze für die Kleine-Einmaleins-Matrix an! ");
+	int obergrenze = sc.nextInt();
+	int j = 1;	
+	boolean legendeAusgeben = false;
+		
+		
+		while (j <= obergrenze) {
+	
+			for (int i = 1; i <= obergrenze; i++) {
+				
+				int legendenzeile = i;
+				int legendenspalte = j;
+				
+				if (legendenzeile == 1 && !legendeAusgeben) {
+					System.out.print("    "); 
+					while (legendenzeile <= obergrenze) {
+						System.out.print(legendenzeile +   "   ");
+						legendenzeile++;
+						
+					}	
+					System.out.println();
+					legendeAusgeben = true;		
+				}
+				if (i == 1) {
+					
+					                         //Doppelter Code → Vielleicht eine Methode hierfür bauen?
+					if (legendenspalte < 10) 
+					System.out.print(legendenspalte + "   ");
+					
+					else if ( i < 100) {
+						System.out.print(legendenspalte + "  ");
+					}
+					else {
+						System.out.print(legendenspalte + " ");
+					}
+				}
+				
+				int erg = i*j;
+				if (erg < 10) {
+					System.out.print(erg + "   ");
+				}
+				else if (erg < 100) {
+					System.out.print(erg + "  ");
+				}
+				else {
+					System.out.print(erg + " ");
+				}
+			}
+			System.out.println();
+			j++;
+		}
+    
+	}
+}
